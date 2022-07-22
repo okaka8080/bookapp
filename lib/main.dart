@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       title: 'Flutter Sample',
-      home: MyHomePage(title: 'Flutter Sample'),
+      home: MyHomePage(title: 'Flutter books'),
     );
   }
 }
@@ -53,7 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Flutter Sample'),
+        title: const Text('Flutter books'),
       ),
       body: ListView.builder(
         itemCount: items.length,
@@ -66,10 +66,11 @@ class _MyHomePageState extends State<MyHomePage> {
                     items[index]['volumeInfo']['imageLinks']['thumbnail'],
                   ),
                   title: Text(items[index]['volumeInfo']['title']),
-                  subtitle:
-                      (items[index]['volumeInfo']['publishedDate'] != null)
-                          ? Text(items[index]['volumeInfo']['publishedDate'])
-                          : const Text("not found"),
+                  subtitle: (items[index]['volumeInfo']['publishedDate'] !=
+                          null)
+                      ? Text(
+                          "出版日:" + items[index]['volumeInfo']['publishedDate'])
+                      : const Text("出版日不明"),
                 ),
               ],
             ),
